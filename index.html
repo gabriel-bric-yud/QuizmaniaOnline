@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang = 'en-us'>
+
+<head>
+  <meta charset = 'UTF-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz Mania!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Tektur&display=swap" rel="stylesheet">
+
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class = "header">
+    <div id = "titleDiv" >
+      <div class = "leftHeader"></div>
+      <a class = "centerHeader"> Quiz Mania!</a>
+      <div class = "btn-group rightHeader">
+        <div class="dropdown btn-group">
+          <button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown">
+            Quiz Style
+          </button>
+          <div class="dropdown-menu">
+            <div class="dropdown-header">Guess the</div>
+            <span class="dropdown-item-text quizStyle" id = 'guessWord'>Word</span>
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-header">Guess the</div>
+            <span class="dropdown-item-text quizStyle" id = 'guessDefinition'>Definition</span>
+          </div>
+        </div>
+        <div class="dropdown btn-group">
+          <button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown">
+            Quiz Type
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <div class="dropdown-header">Multiple Choice</div>
+            <span class="dropdown-item-text">Vocab Quiz</span>
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-header">Memory</div>
+            <span class="dropdown-item-text">Flash Cards</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class = "quizNav bg-warning">
+    <div class = "btn-group" style = "justify-content: center; flex-wrap: wrap;">
+      <div class="dropdown dropup btn-group 111">
+        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+          CSIT111
+        </button>
+        <div class="dropdown-menu">
+          <div class="dropdown-header"><strong><u>Logic and Design</u></strong></div>
+          <i><strong><span class="dropdown-item-text quizOption" id = 'csit111_midterm'>Midterm</span></strong></i>
+          <div class="dropdown-divider"></div>
+          <i><strong><span class="dropdown-item-text quizOption" id = 'csit111_final'>Final</span></strong></i>
+        </div>
+      </div>
+      <div class="dropdown dropup btn-group 212">
+        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+          CSIT 212
+        </button>
+        <div class="dropdown-menu">
+          <div class="dropdown-header"><Strong><u>Visual Basic</u></Strong></div>
+          <i><strong><span class="dropdown-item-text quizOption" id = 'csit212_final'>Final</span></strong></i>
+        </div>
+      </div>
+      <div class="dropdown dropup btn-group 210">
+        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+          CSIT210
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <div class="dropdown-header"><strong><u>Introduction to Programming</u></strong></div>
+          <span class="dropdown-item-text quizOption" id = 'csit210_ch1'>Object Oriented Basics</span>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item-text quizOption" id = 'csit210_ch2'>Data & Expressions</span>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item-text quizOption" id = 'csit210_ch3'>Classes & Objects</span>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item-text quizOption" id = 'csit210_ch4'>Conditionals & Loops</span>
+          <div class="dropdown-divider"></div>
+          <i><strong><span class="dropdown-item-text quizOption" id = 'csit210_midterm'>Midterm</span></strong></i>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item-text quizOption" id = 'csit210_ch5'>Writing Classes</span>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item-text quizOption" id = 'csit210_ch6'>Arrays</span>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item-text quizOption" id = 'csit210_ch7'>Exceptions</span>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item-text quizOption" id = 'csit210_ch8'>Graphical User Interface</span>
+          <div class="dropdown-divider"></div>
+          <i><strong><span class="dropdown-item-text quizOption" id = 'csit210_final'>Final</span></strong></i>
+        </div>
+      </div>
+      <div class="dropdown dropup btn-group 211">
+        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+          CSIT211
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <div class="dropdown-header"><strong><u>Advanced Programming Concepts</u></strong></div>
+          <span class="dropdown-item-text quizOption" id = 'csit211_ch1'>Inheritance & Polymorphism</span>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item-text quizOption" id = 'csit211_ch2'>Algorithms & Recurssion</span>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item-text quizOption" id = 'csit211_ch3'>Stacks, Queues & Lists</span>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item-text quizOption" id = 'csit211_ch4'>Trees & Heaps</span>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item-text quizOption" id = 'csit211_ch5'>Graphs</span>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item-text quizOption" id = 'csit211_ch6'>Databases</span>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item-text quizOption" id = 'csit211_final'><i><strong>Final</strong></i></span>
+        </div>
+      </div>
+      <div class="dropdown dropup btn-group 241">
+        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+          CSIT241
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <div class="dropdown-header"><strong><u>Applied Systems Design and Analysis</u></strong></div>
+          <div class="dropdown-header"><i>Phase I: Systems Planning</i></div>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item-text quizOption" id = 'csit241_ch1'>Information Technology Systems</span>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item-text quizOption" id = 'csit241_ch2'>Analyze Business Case</span>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item-text quizOption" id = 'csit241_ch3'>Manage System Projects</span>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-header"><i>Phase 2: Systems Analysis</i></div>
+          <span class="dropdown-item-text quizOption" id = 'csit241_ch4'>Requirements Engineering</span>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item-text quizOption" id = 'csit241_ch5'>Data and Model Processing</span>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item-text quizOption" id = 'csit241_ch6'>Object Modeling</span>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item-text quizOption" id = 'csit241_ch7'>Development Strategies</span>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-header"><i>Phase 3: Systems Design</i></div>
+          <span class="dropdown-item-text quizOption" id = 'csit241_ch8'>UI Design</span>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item-text quizOption" id = 'csit241_ch9'>Database Design</span>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item-text quizOption" id = 'csit241_ch10'>Systems Architecture</span>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-header"><i>Phase 4: Systems Implementation</i></div>
+          <span class="dropdown-item-text quizOption" id = 'csit241_ch11'>Managing Systems Implementation</span>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-header"><i>Phase 5: Systems Support & Security</i></div>
+          <span class="dropdown-item-text quizOption" id = 'csit241_ch12'>Managing Support & Security</span>
+        </div>
+      </div>
+      <div class="dropdown dropup btn-group pk">
+        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+          Pokemon
+        </button>
+        <div class="dropdown-menu">
+          <div class="dropdown-header"><u>Pokemon</u></div>
+          <span class="dropdown-item-text quizOption" id = 'pokemon'>Pokemon</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+
+  
+  <div id = 'topContainer'>
+      <div class = 'customContainer'>
+          <h4 id = "question">QUESTION</h4>
+      </div>
+      <div class = 'customContainer'>
+          <div class = 'choiceContainer'>
+              <button class= 'multipleChoice 1 btn btn-primary' id = "a">A</button>
+              <p id = 'choiceA' class = "choiceText"> OPTION 1</p>
+          </div>
+          <div class = 'choiceContainer'>
+              <button class= 'multipleChoice 2 btn btn-primary' id = "b">B</button>
+              <p id = 'choiceB' class = "choiceText">OPTION 2</p>
+          </div>
+          <div class = 'choiceContainer'>
+              <button class= 'multipleChoice 3 btn btn-primary' id = "c">C</button>
+              <p id = 'choiceC' class = "choiceText">OPTION 3</p>
+          </div>
+          <div class = 'choiceContainer'>
+              <button class= 'multipleChoice 4 btn btn-primary' id = "d">D</button>
+              <p id = 'choiceD' class = "choiceText">OPTION 4</p>
+          </div>
+      </div>  
+  </div>
+
+
+
+  <div id = 'playButtonContainer'>
+      <button id= 'playButton' class = "btn btn-warning">Start Quiz</button>
+  </div>
+
+  
+
+
+  <div class = 'resultContainer'>
+      <h2 id='result'>Start a quiz!</h2>
+      <h2>Points: <span id='points'> 0 </span></h2>
+  </div>
+
+  <script src="app.js"></script>
+    
+</body>
+
+</html>
