@@ -219,7 +219,7 @@ let progressbarIncrease
 let progressbar
 
 function increaseProgress() {
-  currentProgress = $(progressbar).width();
+  currentProgress = $(".progress-bar").width();
   currentProgress += 600;
   $(progressbar).width(currentProgress)
     console.log($(progressbar))
