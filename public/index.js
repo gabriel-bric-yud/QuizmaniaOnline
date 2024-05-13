@@ -217,13 +217,12 @@ function displayChoices(index, data, keys) {
 
 let progressbarIncrease
 let progressbar
-
+let currentProgress
 function increaseProgress() {
-  currentProgress = $(".progress-bar").width();
-  currentProgress += 600;
-  $(progressbar).width(currentProgress)
-    console.log($(progressbar))
-    console.log($(progressbar).width())
+  let percent = 100 + "%" 
+  $('.progress-bar').css('width', percent)
+  console.log($('.progress-bar'))
+  console.log($('.progress-bar').css('width'))
 }
 
 
@@ -291,9 +290,10 @@ function pokemonFetch(url = "", endpoints = [], keys = [], index = 0) {
 function createQuestion() {
   $(resultDisplay).text(displayQuizName());
   $(playButton).prop('disabled', true)
-  $(question).text("").append('<div class="progress" style = "width: 300px; max-width: 90vw"><div class="progress-bar" style="width:0%"></div></div>')
+  $(question).text("").append('<div class="progress" style = "width: 300px; max-width: 90vw"><div class="progress-bar" style="width:5%"></div></div>')
+  currentProgress = 0;
   progressbar = $('.progress-bar');
-    progressbarIncrease = setInterval(increaseProgress, 30)
+  progressbarIncrease = setInterval(increaseProgress, 30)
   $('.message').remove()
   $('.choiceText').html('<div class="spinner-border text-primary"></div>')
   $(btnMultipleChoice).hide()
