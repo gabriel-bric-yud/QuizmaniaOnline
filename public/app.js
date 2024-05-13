@@ -298,10 +298,10 @@ function createQuestion() {
   setTimeout(() => {
     if (currentQuiz != "pokemon") {
       let dataArray = [["table", currentQuiz]]
-      MySQLFormData("http://localhost:8000/index.php", dataArray, correctIndex)
+      MySQLFormData("https://quizmaniaapi.azurewebsites.net", dataArray, correctIndex)
     }
     else {
-      pokemonFetch("https://pokeapi.co/api/v2/pokemon/", ["pikachu/", "charmander/", "squirtle/", "bulbasaur/"], ['abilities', "name"], correctIndex)
+      pokemonFetch("https://quizmaniaapi.azurewebsites.net", ["pikachu/", "charmander/", "squirtle/", "bulbasaur/"], ['abilities', "name"], correctIndex)
     }
 
   }, 300)
