@@ -223,7 +223,7 @@ function increaseProgress() {
   currentProgress += 600;
   $(progressbar).width(currentProgress)
     console.log($(progressbar))
-    console.log($(progressbar).width)
+    console.log($(progressbar).width())
 }
 
 
