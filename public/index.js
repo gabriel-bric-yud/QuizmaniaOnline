@@ -221,8 +221,6 @@ let currentProgress
 function increaseProgress() {
   let percent = 100 + "%" 
   $('.progress-bar').css('width', percent)
-  console.log($('.progress-bar'))
-  console.log($('.progress-bar').css('width'))
 }
 
 
@@ -299,7 +297,7 @@ function createQuestion() {
   $(btnMultipleChoice).hide()
   $(choiceContainer).css('backgroundColor', '')
   correctIndex = Math.floor(Math.random() * 4)
-  console.log(currentQuiz)
+  //console.log(currentQuiz)
 
   setTimeout(() => {
     if (currentQuiz != "pokemon") {
@@ -355,10 +353,17 @@ function clearResult() {
 
 let correctIndex
 function playGame() {
-    $(btnMultipleChoice).click((e) => {
-        let userChoice = $(e.target);
-        checkAnswer(userChoice);
-    })
+  $(btnMultipleChoice).click((e) => {
+    let userChoice = $(e.target);
+    checkAnswer($(userChoice));
+  })
+
+  $(".choiceText").click((e) => {
+    let userChoice = $(e.target);
+    let answer = $(userChoice).siblings("button:first-of-type")
+    checkAnswer($(answer));
+  })
+    
 }
 
 $(choiceContainer).filter(function(index, value) {
@@ -379,7 +384,6 @@ $(playButton).fadeIn(1000);
 
 $(dropdownOption).click((e) => {
   target = $(e.target);
-  console.log(target)
   switch ($(target).attr('class')) {
     case "dropdown-item-text quizOption":
       currentQuiz = $(target).attr("id");;
