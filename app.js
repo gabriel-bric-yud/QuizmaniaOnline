@@ -1,3 +1,4 @@
+const $ = require("jquery");
 
 const playButton = $('#playButton');
 const bottomContainer = $('.bottomContainer');
