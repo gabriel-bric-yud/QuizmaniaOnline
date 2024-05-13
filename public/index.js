@@ -126,7 +126,7 @@ function MySQLFormData(url = "", dataArray = [], index) {
       }
     })
   })
-  .then((data) => {$(playButton).prop('disabled', false); clearInterval(progressBar)})
+  .then((data) => {$(playButton).prop('disabled', false); clearInterval(progressbarIncrease)})
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -215,8 +215,8 @@ function displayChoices(index, data, keys) {
   }
 }
 
-let progressBarIncrease
-let progressBar
+let progressbarIncrease
+let progressbar
 
 function increaseProgress() {
   currentProgress = $(progressbar).width();
@@ -285,15 +285,15 @@ function pokemonFetch(url = "", endpoints = [], keys = [], index = 0) {
       }
     })
   })
-  .then((data) => {$(playButton).prop('disabled', false); clearInterval(progressBar)})
+  .then((data) => {$(playButton).prop('disabled', false); clearInterval(progressbarIncrease)})
 }
 
 function createQuestion() {
   $(resultDisplay).text(displayQuizName());
   $(playButton).prop('disabled', true)
   $(question).text("").append('<div class="progress" style = "width: 300px; max-width: 90vw"><div class="progress-bar" style="width:0%"></div></div>')
-  progressBar = $('.progress-bar');
-    progressBarIncrease = setInterval(increaseProgress, 30)
+  progressbar = $('.progress-bar');
+    progressbarIncrease = setInterval(increaseProgress, 30)
   $('.message').remove()
   $('.choiceText').html('<div class="spinner-border text-primary"></div>')
   $(btnMultipleChoice).hide()
