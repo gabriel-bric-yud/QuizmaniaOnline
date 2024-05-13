@@ -1,4 +1,6 @@
-const $ = require("jquery");
+const jsdom = require("jsdom");
+const dom = new jsdom.JSDOM(`<!DOCTYPE html>`);
+const $ = require("jquery")(dom.window);
 
 const playButton = $('#playButton');
 const bottomContainer = $('.bottomContainer');
