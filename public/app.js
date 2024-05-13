@@ -215,13 +215,18 @@ function displayChoices(index, data, keys) {
   }
 }
 
+let progressBarIncrease
+let progressBar
+
 function increaseProgress() {
-  currentProgress = $('.progress-bar').width();
+  currentProgress = $(progressbar).width();
   currentProgress += 600;
-  $('.progress-bar').width(currentProgress)
+  $(progressbar).width(currentProgress)
+    console.log($(progressbar))
+    console.log($(progressbar).width)
 }
 
-let progressBar
+
 
 function displayQuizName() {
   let quizName = currentQuiz.split("_")
@@ -287,7 +292,8 @@ function createQuestion() {
   $(resultDisplay).text(displayQuizName());
   $(playButton).prop('disabled', true)
   $(question).text("").append('<div class="progress" style = "width: 300px; max-width: 90vw"><div class="progress-bar" style="width:0%"></div></div>')
-  progressBar = setInterval(increaseProgress, 30)
+  progressBar = $('.progress-bar');
+    progressBarIncrease = setInterval(increaseProgress, 30)
   $('.message').remove()
   $('.choiceText').html('<div class="spinner-border text-primary"></div>')
   $(btnMultipleChoice).hide()
