@@ -146,7 +146,9 @@ function flashcardSQLRequest(url = "", dataArray = []) {
 
 async function requestApi(url = "", array = [] , index = 0) {
   const response = await fetch(url)
-  array[index] = await response.json()
+  const quizData = await response.json()
+  console.log(quizData)
+  array[index] = {abilities: quizData['abilities'][0]['ability']['name'], name: quizData['name']}
   return response
 }
 
@@ -156,7 +158,9 @@ function pokemonFetch(url = "", endpoints = [], keys = [], index = 0) {
   .then((data) => requestApi(url+endpoints[1], totalData, 1))
   .then((data) => requestApi(url+endpoints[2], totalData, 2))
   .then((data) => requestApi(url+endpoints[3], totalData, 3))
-  .then((data) => console.log(totalData))
+  .then((data) => {
+    console.log(totalData);
+  })
   .then((data) => {
     displayChoices(index, totalData, keys);
     $(choiceContainer).filter(function(index, value) {
@@ -176,6 +180,7 @@ function pokemonFetch(url = "", endpoints = [], keys = [], index = 0) {
 
 
 function addChoice(position, choice) {
+  console.log(choice)
   switch(position) {
     case 0:
       if (currentType == "quiz") {
@@ -266,7 +271,7 @@ function createQuiz() {
       quizSQLRequest("https://quizmania-online.azurewebsites.net", dataArray, correctIndex)
     }
     else {
-      pokemonFetch("https://pokeapi.co/api/v2/pokemon", ["1", "2", "3", "4"], ['abilities', "name"], correctIndex)
+      pokemonFetch("https://pokeapi.co/api/v2/pokemon/", ["1", "65", "150", "91"], ['abilities', 'name'], correctIndex)
     }
   }, 300)
 }
@@ -285,7 +290,7 @@ function createFlashcard() {
       flashcardSQLRequest("https://quizmania-online.azurewebsites.net", dataArray)
     }
     else {
-      pokemonFetch("https://quizmania-online.azurewebsites.net", ["pikachu/", "charmander/", "squirtle/", "bulbasaur/"], ['abilities', "name"], correctIndex)
+      pokemonFetch("https://pokeapi.co/api/v2/pokemon/", ["1", "4", "7", "25"], ['abilities', "name"], correctIndex)
     }
   }, 300)
 }
@@ -371,7 +376,8 @@ $(dropdownOption).click((e) => {
   console.log(target)
   switch ($(target).attr('class')) {
     case "dropdown-item-text quizOption":
-      currentQuiz = $(target).attr("id");;
+      currentQuiz = $(target).attr("id");
+      console.log(currentQuiz)
       break;
     case "dropdown-item-text quizStyle":
       currentStyle = $(target).attr("id");
@@ -384,7 +390,7 @@ $(dropdownOption).click((e) => {
 
 $(playButton).click( (e) => {
 
-  if (currentQuiz != "pokemon") {
+  //if (currentQuiz != "pokemon") {
     if (currentType == "quiz") {
       $(flashcardContainer).fadeOut(20)
       $(quizContainer).fadeIn(20)
@@ -403,7 +409,7 @@ $(playButton).click( (e) => {
     clearColors(); 
     clearResult();
     createQuestion()
-  }
+  //}
 })
 
 $("*").on("touchend", function(e) { $(this).focus(); });
