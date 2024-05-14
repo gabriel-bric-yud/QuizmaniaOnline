@@ -172,24 +172,31 @@
       <div class = 'customContainer'>
           <h4 id = "question">QUESTION</h4>
       </div>
-      <div class = 'customContainer'>
-          <div class = 'choiceContainer'>
+      <div class = 'customContainer quizContainer'>
+          <div class = 'choiceContainer d-flex'>
               <button class= 'multipleChoice 1 btn btn-primary' id = "a">A</button>
-              <p id = 'choiceA' class = "choiceText"> OPTION 1</p>
+              <p id = 'choiceA' class = "choiceText quizText"> OPTION 1</p>
           </div>
-          <div class = 'choiceContainer'>
+          <div class = 'choiceContainer d-flex'>
               <button class= 'multipleChoice 2 btn btn-primary' id = "b">B</button>
-              <p id = 'choiceB' class = "choiceText">OPTION 2</p>
+              <p id = 'choiceB' class = "choiceText quizText">OPTION 2</p>
           </div>
-          <div class = 'choiceContainer'>
+          <div class = 'choiceContainer d-flex'>
               <button class= 'multipleChoice 3 btn btn-primary' id = "c">C</button>
-              <p id = 'choiceC' class = "choiceText">OPTION 3</p>
+              <p id = 'choiceC' class = "choiceText quizText">OPTION 3</p>
           </div>
-          <div class = 'choiceContainer'>
+          <div class = 'choiceContainer d-flex'>
               <button class= 'multipleChoice 4 btn btn-primary' id = "d">D</button>
-              <p id = 'choiceD' class = "choiceText">OPTION 4</p>
+              <p id = 'choiceD' class = "choiceText quizText">OPTION 4</p>
           </div>
-      </div>  
+      </div> 
+      
+      <div class = 'flashcardContainer'>
+        <div class = "justify-content-center choiceContainer d-grid ">
+            <button class= 'btn btn-primary btn-lg' id = "flashcardBtn">Show Answer</button>
+            <p id = 'flashcardText'> OPTION 1</p>
+        </div>
+    </div>
   </div>
 
   <div id = 'playButtonContainer'>
@@ -198,7 +205,19 @@
 
   <div class = 'd-flex justify-content-center container-fluid bg-warning'>
     <div class = "btn-group">
-      <div class="dropdown btn-group">
+      <div class="dropdown dropup btn-group">
+        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+          Quiz Type
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <div class="dropdown-header">Multiple Choice</div>
+          <span class="dropdown-item-text quizType" id = "quiz">Quiz</span>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-header">Memory</div>
+          <span class="dropdown-item-text quizType" id = "flashcard">Flash Cards</span>
+        </div>
+      </div>
+      <div class="dropdown dropup btn-group">
         <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
           Quiz Style
         </button>
@@ -208,18 +227,6 @@
           <div class="dropdown-divider"></div>
           <div class="dropdown-header">Guess the</div>
           <span class="dropdown-item-text quizStyle" id = 'guessDefinition'>Definition</span>
-        </div>
-      </div>
-      <div class="dropdown btn-group">
-        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
-          Quiz Type
-        </button>
-        <div class="dropdown-menu dropdown-menu-right">
-          <div class="dropdown-header">Multiple Choice</div>
-          <span class="dropdown-item-text quizStyle">Vocab Quiz</span>
-          <div class="dropdown-divider"></div>
-          <div class="dropdown-header">Memory</div>
-          <span class="dropdown-item-text quizStyle">Flash Cards</span>
         </div>
       </div>
     </div>
