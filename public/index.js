@@ -144,35 +144,59 @@ function flashcardSQLRequest(url = "", dataArray = []) {
   .then((data) => {$(playButton).prop('disabled', false); clearInterval(progressbarIncrease)})
 }
 
-async function requestApi(url = "", array = [] , index = 0) {
+async function requestApi(url = "", array = [], keys, position) {
+  console.log(position)
   const response = await fetch(url)
   const quizData = await response.json()
-  console.log(quizData)
-  array[index] = {abilities: quizData['abilities'][0]['ability']['name'], name: quizData['name']}
-  return response
-}
-
-function pokemonFetch(url = "", endpoints = [], keys = [], index = 0) {
-  let totalData = [];
-  requestApi(url+endpoints[0], totalData, 0)
-  .then((data) => requestApi(url+endpoints[1], totalData, 1))
-  .then((data) => requestApi(url+endpoints[2], totalData, 2))
-  .then((data) => requestApi(url+endpoints[3], totalData, 3))
-  .then((data) => {
-    console.log(totalData);
-  })
-  .then((data) => {
-    displayChoices(index, totalData, keys);
-    $(choiceContainer).filter(function(index, value) {
-      if ((index%2 == 0)) {
-        $(this).css('backgroundColor', 'whitesmoke')
-      }
-      else {
-        $(this).css('backgroundColor', 'white')
+  let exists = false;
+  if (array.length > 0) {
+    array.forEach((elem) => {
+      if (elem["abilities"] == quizData['abilities'][0]['ability']['name']) {
+        exists = true;
       }
     })
+  }
+  if (exists) {
+    array[position] = {[keys[0]]: quizData['abilities'][1]['ability']['name'], [keys[1]]: quizData['name']}
+  }
+  else {
+    array[position] = {[keys[0]]: quizData['abilities'][0]['ability']['name'], [keys[1]]: quizData['name']}
+  }
+  console.log(array)
+  //return response
+}
+
+async function requestPokemon(url, array = [], keys = []) {
+  const maxPokemon = 149;
+  let numArray = [];
+  let randIndex
+  for (let i = 0; i < 4; i++) {
+    do {
+      randIndex = Math.floor(Math.random() * maxPokemon) + 1
+      console.log(randIndex)
+    }
+    while (numArray.includes(randIndex))
+    numArray.push(randIndex)
+    await requestApi(url+numArray[i], array, keys, i)
+  }
+  console.log(array)
+}
+
+async function pokemonFetch(url = "", keys = [], index = 0) {
+  let totalData = [];
+  
+  await requestPokemon(url, totalData, keys)
+  console.log(totalData)
+  displayChoices(index, totalData, keys);
+  $(choiceContainer).filter(function(index, value) {
+    if ((index%2 == 0)) {
+      $(this).css('backgroundColor', 'whitesmoke')
+    }
+    else {
+      $(this).css('backgroundColor', 'white')
+    }
   })
-  .then((data) => {$(playButton).prop('disabled', false); clearInterval(progressbarIncrease)})
+  $(playButton).prop('disabled', false); clearInterval(progressbarIncrease)
 }
 
 
@@ -271,7 +295,7 @@ function createQuiz() {
       quizSQLRequest("https://quizmaniaapi.azurewebsites.net", dataArray, correctIndex)
     }
     else {
-      pokemonFetch("https://pokeapi.co/api/v2/pokemon/", ["1", "65", "150", "91"], ['abilities', 'name'], correctIndex)
+      pokemonFetch("https://pokeapi.co/api/v2/pokemon/", ['abilities', 'name'], correctIndex)
     }
   }, 300)
 }
@@ -290,7 +314,7 @@ function createFlashcard() {
       flashcardSQLRequest("https://quizmaniaapi.azurewebsites.net", dataArray)
     }
     else {
-      pokemonFetch("https://pokeapi.co/api/v2/pokemon/", ["1", "65", "150", "91"], ['abilities', 'name'], correctIndex)
+      pokemonFetch("https://pokeapi.co/api/v2/pokemon/", ['abilities', "name"], correctIndex)
     }
   }, 300)
 }
