@@ -78,6 +78,7 @@ p {
 .quizOption:hover, .quizStyle:hover {
   opacity: .8;
   background-color: #eee;
+  cursor: pointer;
 }
 
 .customContainer {
@@ -196,6 +197,10 @@ legend {
 .dropdown-menu {
   background-color: white !important;
   /**overflow-y: scroll !important;*/
+}
+
+.dropdown-header {
+  pointer-events: none;
 }
 
 
