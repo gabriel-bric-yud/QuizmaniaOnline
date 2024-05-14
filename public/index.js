@@ -268,7 +268,7 @@ function createQuiz() {
   setTimeout(() => {
     if (currentQuiz != "pokemon") {
       let dataArray = [["table", currentQuiz], ["type", currentType]]
-      quizSQLRequest("quizmaniaapi.azurewebsites.net", dataArray, correctIndex)
+      quizSQLRequest("https://quizmaniaapi.azurewebsites.net", dataArray, correctIndex)
     }
     else {
       pokemonFetch("https://pokeapi.co/api/v2/pokemon/", ["1", "65", "150", "91"], ['abilities', 'name'], correctIndex)
@@ -287,7 +287,7 @@ function createFlashcard() {
   setTimeout(() => {
     if (currentQuiz != "pokemon") {
       let dataArray = [["table", currentQuiz], ["type", currentType]]
-      flashcardSQLRequest("quizmaniaapi.azurewebsites.net", dataArray)
+      flashcardSQLRequest("https://quizmaniaapi.azurewebsites.net", dataArray)
     }
     else {
       pokemonFetch("https://pokeapi.co/api/v2/pokemon/", ["1", "65", "150", "91"], ['abilities', 'name'], correctIndex)
