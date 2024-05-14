@@ -38,7 +38,8 @@ p {
 
 #titleDiv a {
   font-family: 'Bungee Spice', cursive;
-  font-size: 25px;
+  font-size: 40px;
+  width: max-content;
 }
 
 #titelDiv button {
@@ -72,16 +73,15 @@ p {
   position: relative;
   max-width: 500px;
   margin: 0 auto;
-  
 }
 
-.quizOption:hover, .quizStyle:hover {
-  opacity: .8;
+.quizOption:hover, .quizStyle:hover, .quizType:hover, .choiceContainer:hover  {
+  opacity: .9;
   background-color: #eee;
   cursor: pointer;
 }
 
-.customContainer {
+.quizContainer, .flashcardContainer {
   display: grid;
   justify-content: center;
   text-align: center;
@@ -89,7 +89,6 @@ p {
 }
 
 .choiceContainer {
-  display: flex;
   min-height: fit-content;
   align-items: center;
   max-width: 97vw;
@@ -111,6 +110,17 @@ p {
   width: 100%;
 }
 
+#flashcardBtn {
+  margin-top: 20px;
+}
+
+#flashcardText {
+  font-size: 30px;
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+}
 
 .multipleChoice:hover {
   opacity: .8;
@@ -145,7 +155,6 @@ p {
   height: 100%;
 
 }
-
 
 @keyframes rotateY {
   100% {rotate: y 360deg }
@@ -209,8 +218,6 @@ legend {
 }
 
 
-
-
 @media (min-width: 900px) {
   #topContainer {
     justify-self: center;
@@ -236,10 +243,6 @@ legend {
     
   }
 
-  #titleDiv a {
-    font-size: 40px;
-  }
-
   .gameType {
     font-size: 25px;
   }
@@ -248,26 +251,10 @@ legend {
 
 @media (max-width: 749px) {
 
-  /**
-  .header {
-    position: fixed;
-    z-index: 999;
-  }
-
-  
-  .quizNav {
-    margin-top: 90px;
-  }
-  */
-
   #titleDiv {
     display: flex;
     margin: 0 auto;
     justify-content: center;
-  }
-
-  .rightHeader {
-    margin-left: 15px;
   }
 
 
@@ -283,6 +270,19 @@ legend {
     border-radius: 0px;
     font-size: 20px;
     margin: 0 auto;
+    justify-content: center;
+    width: 100vw;
+  }
+
+  .resultContainer h2 {
+    font-size: 17px;
+  }
+
+  #flashcardText {
+    font-size: 20px;
+    width: 100vw;
+    border-radius: 0px;
+    margin-top: 0px !important;
   }
 
 }
