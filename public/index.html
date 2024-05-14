@@ -8,18 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Tektur&display=swap" rel="stylesheet">
-
-
-    <!-- Latest compiled and minified CSS -->
+  <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-
   <!-- jQuery library -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"
   integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="></script>
-
   <!-- Popper JS -->
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-
   <!-- Latest compiled JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="style.css">
@@ -30,34 +25,8 @@
     <div id = "titleDiv" >
       <div class = "leftHeader"></div>
       <a class = "centerHeader"> Quiz Mania!</a>
-      <div class = "btn-group rightHeader">
-        <div class="dropdown btn-group">
-          <button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown">
-            Quiz Style
-          </button>
-          <div class="dropdown-menu">
-            <div class="dropdown-header">Guess the</div>
-            <span class="dropdown-item-text quizStyle" id = 'guessWord'>Word</span>
-            <div class="dropdown-divider"></div>
-            <div class="dropdown-header">Guess the</div>
-            <span class="dropdown-item-text quizStyle" id = 'guessDefinition'>Definition</span>
-          </div>
-        </div>
-        <div class="dropdown btn-group">
-          <button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown">
-            Quiz Type
-          </button>
-          <div class="dropdown-menu dropdown-menu-right">
-            <div class="dropdown-header">Multiple Choice</div>
-            <span class="dropdown-item-text">Vocab Quiz</span>
-            <div class="dropdown-divider"></div>
-            <div class="dropdown-header">Memory</div>
-            <span class="dropdown-item-text">Flash Cards</span>
-          </div>
-        </div>
-      </div>
+      <div class = "rightHeader"> </div>
     </div>
-
   </div>
 
   <div class = "quizNav bg-warning">
@@ -68,9 +37,9 @@
         </button>
         <div class="dropdown-menu">
           <div class="dropdown-header"><strong><u>Logic and Design</u></strong></div>
-          <i><strong><span class="dropdown-item-text quizOption" id = 'csit111_midterm'>Midterm</span></strong></i>
+          <strong><span class="dropdown-item-text quizOption" id = 'csit111_midterm'>Midterm</span></strong>
           <div class="dropdown-divider"></div>
-          <i><strong><span class="dropdown-item-text quizOption" id = 'csit111_final'>Final</span></strong></i>
+          <strong><span class="dropdown-item-text quizOption" id = 'csit111_final'>Final</span></strong>
         </div>
       </div>
       <div class="dropdown dropup btn-group 212">
@@ -79,8 +48,8 @@
         </button>
         <div class="dropdown-menu">
           <div class="dropdown-header"><Strong><u>Visual Basic</u></Strong></div>
-          <i><strong><span class="dropdown-item-text quizOption" id = 'csit212_midterm'>Midterm</span></strong></i>
-          <i><strong><span class="dropdown-item-text quizOption" id = 'csit212_final'>Final</span></strong></i>
+          <strong><span class="dropdown-item-text quizOption" id = 'csit212_midterm'>Midterm</span></strong>
+          <strong><span class="dropdown-item-text quizOption" id = 'csit212_final'>Final</span></strong>
         </div>
       </div>
       <div class="dropdown dropup btn-group 210">
@@ -97,7 +66,7 @@
           <div class="dropdown-divider"></div>
           <span class="dropdown-item-text quizOption" id = 'csit210_ch4'>IV. Conditionals & Loops</span>
           <div class="dropdown-divider"></div>
-          <i><strong><span class="dropdown-item-text quizOption" id = 'csit210_midterm'>Midterm</span></strong></i>
+          <strong><span class="dropdown-item-text quizOption" id = 'csit210_midterm'>Midterm</span></strong>
           <div class="dropdown-divider"></div>
           <span class="dropdown-item-text quizOption" id = 'csit210_ch5'>V. Writing Classes</span>
           <div class="dropdown-divider"></div>
@@ -107,7 +76,7 @@
           <div class="dropdown-divider"></div>
           <span class="dropdown-item-text quizOption" id = 'csit210_ch8'>VIII. Graphical User Interface</span>
           <div class="dropdown-divider"></div>
-          <i><strong><span class="dropdown-item-text quizOption" id = 'csit210_final'>Final</span></strong></i>
+          <strong><span class="dropdown-item-text quizOption" id = 'csit210_final'>Final</span></strong>
         </div>
       </div>
       <div class="dropdown dropup btn-group 211">
@@ -128,7 +97,7 @@
           <div class="dropdown-divider"></div>
           <span class="dropdown-item-text quizOption" id = 'csit211_ch6'>VI. Databases</span>
           <div class="dropdown-divider"></div>
-          <span class="dropdown-item-text quizOption" id = 'csit211_final'><i><strong>Final</strong></i></span>
+          <span class="dropdown-item-text quizOption" id = 'csit211_final'><strong>Final</strong></span>
         </div>
       </div>
       <div class="dropdown dropup btn-group 241">
@@ -168,21 +137,34 @@
           <span class="dropdown-item-text quizOption" id = 'csit241_ch12'>XII. Managing Support & Security</span>
         </div>
       </div>
-      <div class="dropdown dropup btn-group pk">
+      <div class="dropdown dropup btn-group extra">
         <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
-          Pokemon
+          Pop Culture
         </button>
         <div class="dropdown-menu">
-          <div class="dropdown-header"><u>Pokemon</u></div>
-          <span class="dropdown-item-text quizOption" id = 'pokemon'>Pokemon</span>
+          <div class="dropdown-header"><Strong><u>Pokemon</u></Strong></div>
+          <span class="dropdown-item-text quizOption" id = 'pokemon'>Names</span>
+          <span class="dropdown-item-text quizOption" id = 'pokemon'>Abilities</span>
+          <span class="dropdown-item-text quizOption" id = 'pokemon'>Number</span>
+          <div class="dropdown-header"><Strong><u>Magic: The Gathering</u></Strong></div>
+          <span class="dropdown-item-text quizOption" id = 'pokemon'>Card Names</span>
+          <span class="dropdown-item-text quizOption" id = 'pokemon'>Card Types</span>
+          <span class="dropdown-item-text quizOption" id = 'pokemon'>Description</span>
+          <span class="dropdown-item-text quizOption" id = 'pokemon'>Card Color</span>
+          <div class="dropdown-header"><Strong><u>Warhammer: 40K</u></Strong></div>
+          <span class="dropdown-item-text quizOption" id = 'pokemon'>Units</span>
+          <span class="dropdown-item-text quizOption" id = 'pokemon'>Cities</span>
+          <span class="dropdown-item-text quizOption" id = 'pokemon'>Alliances</span>
+          <div class="dropdown-header"><Strong><u>Music</u></Strong></div>
+          <span class="dropdown-item-text quizOption" id = 'pokemon'>Artists</span>
+          <span class="dropdown-item-text quizOption" id = 'pokemon'>Albums</span>
+          <span class="dropdown-item-text quizOption" id = 'pokemon'>Songs</span>
+          <span class="dropdown-item-text quizOption" id = 'pokemon'>Release Dates</span>
         </div>
       </div>
     </div>
-
   </div>
-  
 
-  
   <div id = 'topContainer'>
       <div class = 'customContainer'>
           <h4 id = "question">QUESTION</h4>
@@ -207,14 +189,38 @@
       </div>  
   </div>
 
-
-
   <div id = 'playButtonContainer'>
       <button id= 'playButton' class = "btn btn-warning">Start Quiz</button>
   </div>
 
-  
-
+  <div class = 'd-flex justify-content-center container-fluid bg-warning'>
+    <div class = "btn-group">
+      <div class="dropdown btn-group">
+        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+          Quiz Style
+        </button>
+        <div class="dropdown-menu">
+          <div class="dropdown-header">Guess the</div>
+          <span class="dropdown-item-text quizStyle" id = 'guessWord'>Word</span>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-header">Guess the</div>
+          <span class="dropdown-item-text quizStyle" id = 'guessDefinition'>Definition</span>
+        </div>
+      </div>
+      <div class="dropdown btn-group">
+        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+          Quiz Type
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <div class="dropdown-header">Multiple Choice</div>
+          <span class="dropdown-item-text">Vocab Quiz</span>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-header">Memory</div>
+          <span class="dropdown-item-text">Flash Cards</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class = 'resultContainer'>
       <h2 id='result'>Start a quiz!</h2>
