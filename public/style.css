@@ -34,10 +34,11 @@ p {
   text-align: center;
   width: 1000px;
   max-width: 95vw;
+  font-family: 'Bungee Spice';
 }
 
 #titleDiv a {
-  font-family: 'Bungee Spice', cursive;
+  font-family: 'Bungee Spice';
   font-size: 40px;
   width: max-content;
 }
