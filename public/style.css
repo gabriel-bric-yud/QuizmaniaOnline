@@ -28,8 +28,8 @@ p {
 
 #titleDiv {
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  justify-content: center;
   position: relative;
   text-align: center;
   width: 1000px;
