@@ -49,14 +49,14 @@ jobs:
           name: node-app
       
       - name: Login to Azure
-        uses: azure/login@v1
+        uses: azure/login@v2
         with:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_9DC77666FCBC4BB086FEBE87C8A79B6D }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_C208611A209F4BE2AD9BB4C0F8AA9ED8 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_FA6B6D29D1CF4F1E91C88C007C452AD9 }}
 
       - name: 'Deploy to Azure Web App'
-        uses: azure/webapps-deploy@v2
+        uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
           app-name: 'quizmania-online'
