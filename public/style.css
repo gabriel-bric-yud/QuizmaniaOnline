@@ -34,12 +34,11 @@ p {
   text-align: center;
   width: 1000px;
   max-width: 95vw;
-  font-family: "Bungee Spice";
 }
 
 #titleDiv a {
-  font-family: "Bungee Spice";
-  font-size: 40px;
+  font-family: 'Bungee Spice', cursive;
+  font-size: 3em;
   width: max-content;
 }
 
@@ -256,6 +255,17 @@ legend {
     display: flex;
     margin: 0 auto;
     justify-content: center;
+
+  }
+
+
+  #titleDiv a {
+    font-family: "Tektur";
+    color: orange;
+    font-weight: bolder;
+    text-decoration: none;
+    font-size: 40px;
+
   }
 
 
