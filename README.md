@@ -9,4 +9,4 @@ Built with:
 - MySQL database for all question data
 - Styled using Bootstrap.
 
-Hosted on Azure Cloud. Try Here: https://quizmania-online.azurewebsites.net
+Hosted on Azure Cloud. 
