@@ -9,4 +9,4 @@ Built with:
 - MySQL database for all question data
 - Styled using Bootstrap.
 
-Hosted on Azure Cloud. 
+Hosted on Azure Cloud. Currently on hold to prevent MySQL $ charges from Azure.
